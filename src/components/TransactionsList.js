@@ -1,6 +1,7 @@
 import React from 'react'
+import Transaction from './Transaction.js' // importing specific transactions into transactions list 
 
-const TransactionsList = () => {
+const TransactionsList = (props) => { // sending props
 
   return (
     <table className="ui celled striped padded table">
@@ -28,7 +29,7 @@ const TransactionsList = () => {
           </th>
         </tr>
 
-        {"... your code here..."}
+        {props.displayTransactions.map(transaction => <Transaction transaction={transaction}/>)}
 
       </tbody>
     </table>
@@ -36,3 +37,5 @@ const TransactionsList = () => {
 }
 
 export default TransactionsList
+
+// mapping through the array of transactions to display them 
